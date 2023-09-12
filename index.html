@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirect to App Store or Play Store</title>
+    <script>
+        function redirectToAppStore() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            
+            // Check if the user agent contains "iPhone" or "iPad" to identify iOS devices
+            if (/iPhone|iPad/i.test(userAgent)) {
+                window.location.href = 'https://apps.apple.com/ca/app/battle-rush-turbo-pursuit/id6462195787?uo=2'; // Replace with your iOS app link
+            }
+            // Check if the user agent contains "Android" to identify Android devices
+            else if (/Android/i.test(userAgent)) {
+                window.location.href = 'https://play.google.com/store/apps/details?id=com.harshilboss.com'; // Replace with your Android app package name
+            }
+            // If the device is neither iOS nor Android, you can provide a fallback URL
+            else {
+                window.location.href = 'https://apps.apple.com/ca/app/battle-rush-turbo-pursuit/id6462195787?uo=2'; // Replace with your fallback URL
+            }
+        }
+    </script>
+</head>
+<body onload="redirectToAppStore()">
+    <!-- You can display a message or loading indicator here if needed -->
+    <p>Redirecting to the app store...</p>
+</body>
+</html>
